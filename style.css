@@ -12,13 +12,18 @@ h1 {
 #container {
     display: flex;
     justify-content: center;
+    width: 35vw;
+    height: 35vw;
+    /* border: 1px solid red; */
+    margin: 0 auto;
     
 }
 
 .box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
+    border: 0.5px solid black;
     flex: 1 1 auto;
 }
 
+.colored {
+    background: blue;
+}
