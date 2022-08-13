@@ -1,5 +1,6 @@
 const container = document.getElementById("container")
 
+
 // console.log(container)
 
 // function createDiv() {
@@ -39,15 +40,25 @@ function createGrid(dimension) {
     }
 }
 
+function removeGrid() {
+    container.innerHTML = ""
+}
+
 function main() {
     // const userInput = Number(prompt('Please enter the grid dimensions'))
     // let userInput = 100
+    
     const input = document.querySelector('#dimension')
     createGrid(input.value)
     // console.log(input.value)
     input.addEventListener("change", function(e){
         console.log(e.target.value)
         let userInput = e.target.value
+        // console.log(container)
+        // if(container) {
+        //     container.removeChild()
+        // }
+        removeGrid()
         createGrid(userInput)
     })
     // createGrid(userInput)
@@ -55,7 +66,7 @@ function main() {
 
 
 
-main()
+
 
 
 
@@ -65,5 +76,8 @@ function changeColor() {
     // console.log(this.getAttribute('data-key'))
 }
 box.forEach(e => {
+    // console.log(e)
     e.addEventListener("mouseover", changeColor)
 })
+
+main()
