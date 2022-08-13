@@ -50,6 +50,15 @@ function changeColor() {
     // console.log(this.getAttribute('data-key'))
 }
 
+function clearBoard() {
+    // this.classList.remove('colored')
+    // console.log(box)
+    const coloredBox = document.querySelectorAll(".colored")
+    console.log(coloredBox)
+    coloredBox.forEach(elem => {
+        elem.classList.remove('colored')
+    })
+}
 function main() {
     // const userInput = Number(prompt('Please enter the grid dimensions'))
     // let userInput = 100
@@ -78,15 +87,13 @@ function main() {
         })
     })
     // createGrid(userInput)
+
+    const clear = document.querySelector('#clr-btn')
+    // console.log(clear)
+    clear.addEventListener("click", clearBoard)
 }
 
 
 
 
 main()
-
-
-
-
-
-
