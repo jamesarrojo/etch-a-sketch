@@ -41,8 +41,16 @@ function createGrid(dimension) {
 
 function main() {
     // const userInput = Number(prompt('Please enter the grid dimensions'))
-    let userInput = 100
-    createGrid(userInput)
+    // let userInput = 100
+    const input = document.querySelector('#dimension')
+    createGrid(input.value)
+    // console.log(input.value)
+    input.addEventListener("change", function(e){
+        console.log(e.target.value)
+        let userInput = e.target.value
+        createGrid(userInput)
+    })
+    // createGrid(userInput)
 }
 
 
