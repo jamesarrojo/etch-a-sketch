@@ -1,6 +1,7 @@
 const container = document.getElementById("container")
 
 
+
 // console.log(container)
 
 // function createDiv() {
@@ -34,7 +35,7 @@ function createGrid(dimension) {
             // const boxTwo = document.querySelector('.box')
             // console.log(boxTwo)
             // console.log(box)
-
+            
 
         }
     }
@@ -44,12 +45,22 @@ function removeGrid() {
     container.innerHTML = ""
 }
 
+function changeColor() {
+    this.classList.add('colored')
+    // console.log(this.getAttribute('data-key'))
+}
+
 function main() {
     // const userInput = Number(prompt('Please enter the grid dimensions'))
     // let userInput = 100
     
     const input = document.querySelector('#dimension')
     createGrid(input.value)
+    const box = document.querySelectorAll(".box")
+    box.forEach(e => {
+        // console.log(e)
+        e.addEventListener("mouseover", changeColor)
+    })
     // console.log(input.value)
     input.addEventListener("change", function(e){
         console.log(e.target.value)
@@ -60,6 +71,11 @@ function main() {
         // }
         removeGrid()
         createGrid(userInput)
+        const box = document.querySelectorAll(".box")
+        box.forEach(e => {
+            // console.log(e)
+            e.addEventListener("mouseover", changeColor)
+        })
     })
     // createGrid(userInput)
 }
@@ -67,17 +83,10 @@ function main() {
 
 
 
-
-
-
-const box = document.querySelectorAll(".box")
-function changeColor() {
-    this.classList.add('colored')
-    // console.log(this.getAttribute('data-key'))
-}
-box.forEach(e => {
-    // console.log(e)
-    e.addEventListener("mouseover", changeColor)
-})
-
 main()
+
+
+
+
+
+
