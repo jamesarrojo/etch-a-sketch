@@ -41,7 +41,7 @@ function createGrid(dimension) {
 
 function main() {
     // const userInput = Number(prompt('Please enter the grid dimensions'))
-    let userInput = 16
+    let userInput = 100
     createGrid(userInput)
 }
 
